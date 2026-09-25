@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brond Homes | Luxury Remodels & Custom Builds in Scottsdale, AZ</title>
+<meta name="description" content="Brond Homes is a licensed Scottsdale general contractor specializing in luxury remodels and custom home builds across the Phoenix Valley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+  EDIT YOUR BUSINESS INFO HERE (search for these to change them)
+  ------------------------------------------------------------
+  PHONE:    (480) 000-0000          -> appears in contact + footer
+  EMAIL:    info@brondhomes.com     -> appears in contact + footer, and the form sends here
+  LICENSE:  ROC #000000             -> appears in About + footer
+  ============================================================
+-->
+
+<style>
+  :root{
+    --black:#0b0b0b;
+    --ink:#141414;
+    --panel:#1a1a1a;
+    --line:rgba(255,255,255,.14);
+    --white:#ffffff;
+    --soft:#cfcfcf;
+    --muted:#8d8d8d;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sc:'Cormorant SC', Georgia, serif;
+    --sans:'Jost', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ---------- NAV ---------- */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+  header.scrolled{background:rgba(11,11,11,.92);backdrop-filter:blur(10px);border-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand svg{width:46px;height:46px;flex:none}
+  .brand-name{font-family:var(--sc);font-size:1.45rem;letter-spacing:.18em;line-height:1}
+  .brand-sub{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.34em;color:var(--muted);margin-top:5px}
+  .links{display:flex;gap:38px;align-items:center}
+  .links a{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--soft);transition:color .25s}
+  .links a:hover{color:var(--white)}
+  .links .btn{padding:11px 22px}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;width:34px;height:34px;position:relative}
+  .menu-btn span{position:absolute;left:5px;right:5px;height:1px;background:var(--white);transition:.3s}
+  .menu-btn span:nth-child(1){top:12px}.menu-btn span:nth-child(2){top:21px}
+  .menu-open .menu-btn span:nth-child(1){top:17px;transform:rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){top:17px;transform:rotate(-45deg)}
+
+  .btn{display:inline-block;border:1px solid var(--white);color:var(--white);font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;padding:16px 34px;transition:background .3s,color .3s;cursor:pointer;background:transparent}
+  .btn:hover{background:var(--white);color:var(--black)}
+  .btn.solid{background:var(--white);color:var(--black)}
+  .btn.solid:hover{background:transparent;color:var(--white)}
+
+  /* ---------- HERO ---------- */
+  .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(255,255,255,.07), transparent 55%),
+      linear-gradient(180deg,#0b0b0b 0%,#121212 100%);}
+  /* To use a real photo behind the hero, replace the background above with:
+     background: linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)), url('images/hero.jpg') center/cover; */
+  .hero-lines{position:absolute;inset:0;pointer-events:none;opacity:.5}
+  .hero-inner{position:relative;padding-top:84px}
+  .eyebrow{font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:16px}
+  .eyebrow::before{content:"";width:48px;height:1px;background:var(--muted)}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.8rem,7vw,5.8rem);line-height:1.02;letter-spacing:-.01em;max-width:900px}
+  h1 em{font-style:italic;color:var(--soft)}
+  .hero p{max-width:520px;color:var(--soft);font-size:1.05rem;margin:30px 0 44px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}.hero-ctas .btn{padding:16px 26px}
+  .scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:.62rem;letter-spacing:.4em;color:var(--muted);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .scroll-cue::after{content:"";width:1px;height:40px;background:linear-gradient(var(--muted),transparent)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:130px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:70px;flex-wrap:wrap}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.1}
+  h2 em{font-style:italic;color:var(--soft)}
+  .sec-head p{max-width:420px;color:var(--soft)}
+
+  /* trust strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0}
+  .strip .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .strip div{font-family:var(--sc);letter-spacing:.2em;font-size:.95rem;color:var(--soft);display:flex;align-items:center;gap:12px}
+  .strip div::before{content:"";width:6px;height:6px;border:1px solid var(--soft);transform:rotate(45deg)}
+
+  /* services */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .svc{padding:48px 40px 52px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .35s}
+  .svc:hover{background:var(--ink)}
+  .svc .num{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.1rem}
+  .svc h3{font-family:var(--serif);font-weight:400;font-size:1.9rem;margin:18px 0 14px;line-height:1.15}
+  .svc p{color:var(--soft);font-size:.95rem}
+
+  /* gallery */
+  .filters{display:flex;gap:26px;flex-wrap:wrap}
+  .filters button{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding-bottom:6px;border-bottom:1px solid transparent;transition:.25s}
+  .filters button.active,.filters button:hover{color:var(--white);border-color:var(--white)}
+  .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .tile{position:relative;overflow:hidden;background:#222;cursor:pointer;aspect-ratio:4/3}
+  .tile.wide{grid-column:span 7}.tile.narrow{grid-column:span 5}.tile.third{grid-column:span 4}
+  .tile .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#6c6c6c;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+    background:linear-gradient(135deg,#262626,#1b1b1b)}
+  .tile .ph svg{width:34px;height:34px;opacity:.6}
+  .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .tile:hover img{transform:scale(1.05)}
+  .tile .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 24px 20px;background:linear-gradient(transparent,rgba(0,0,0,.85));transform:translateY(8px);opacity:.92;transition:.35s}
+  .tile:hover .cap{transform:none;opacity:1}
+  .cap h4{font-family:var(--serif);font-weight:400;font-size:1.45rem;line-height:1.2}
+  .cap span{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+  .tile.hide{display:none}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-height:86vh;max-width:100%}
+  .lightbox button{position:absolute;top:22px;right:26px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;font-family:var(--serif)}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+  .about-visual{position:relative;aspect-ratio:4/5;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+  .about-visual::before{content:"";position:absolute;inset:18px;border:1px solid var(--line)}
+  .about-visual svg{width:58%;height:auto}
+  .about p{color:var(--soft);margin-bottom:20px}
+  .about h2{margin-bottom:34px}
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+  .creds div{background:var(--black);padding:22px 24px}
+  .creds small{display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .creds strong{font-family:var(--serif);font-weight:400;font-size:1.3rem}
+
+  /* process */
+  #process{border-top:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+  .step{border-top:1px solid var(--white);padding-top:26px}
+  .step span{font-family:var(--serif);font-style:italic;font-size:2.4rem;color:var(--muted);line-height:1}
+  .step h3{font-family:var(--serif);font-weight:400;font-size:1.55rem;margin:14px 0 10px}
+  .step p{color:var(--soft);font-size:.93rem}
+
+  /* contact */
+  #contact{background:var(--ink)}
+  .contact{display:grid;grid-template-columns:5fr 7fr;gap:90px}
+  .contact-info p{color:var(--soft);margin:26px 0 40px}
+  .info-row{padding:20px 0;border-top:1px solid var(--line)}
+  .info-row:last-child{border-bottom:1px solid var(--line)}
+  .info-row small{display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+  .info-row a,.info-row span{font-family:var(--serif);font-size:1.4rem}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+  .field{display:flex;flex-direction:column}
+  .field.full{grid-column:1/-1}
+  label{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  input,select,textarea{background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--white);font-family:var(--sans);font-weight:300;font-size:1rem;padding:10px 0;outline:none;transition:border-color .25s;border-radius:0}
+  input:focus,select:focus,textarea:focus{border-color:var(--white)}
+  select option{background:var(--ink)}
+  textarea{resize:vertical;min-height:110px}
+  .form-note{grid-column:1/-1;font-size:.82rem;color:var(--muted)}
+  .form-msg{grid-column:1/-1;font-family:var(--serif);font-size:1.25rem;display:none}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:60px 0 40px}
+  .foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  .foot-links{display:flex;gap:30px;flex-wrap:wrap}
+  .foot-links a{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
+  .legal{margin-top:50px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.74rem;color:var(--muted);letter-spacing:.06em}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+
+  /* ---------- BEFORE / AFTER ---------- */
+  .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:center}
+  .hero-grid h1{font-size:clamp(2.6rem,5.4vw,5rem)}
+  .ba{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1c1c1c;user-select:none;-webkit-user-select:none;--pos:50%}
+  .ba-hero{aspect-ratio:4/4.6;box-shadow:0 40px 90px rgba(0,0,0,.6);outline:1px solid var(--line);outline-offset:14px}
+  .ba-after,.ba-before{position:absolute;inset:0}
+  .ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+  .ba img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .ba .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .ba .ph.before{justify-content:flex-start;padding-left:9%}.ba .ph.after{justify-content:flex-end;padding-right:9%}
+  .ba .ph em{opacity:.55;font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.6rem);font-weight:300;letter-spacing:.08em}
+  .ba .ph.after{background:
+      linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.5)),
+      linear-gradient(90deg,transparent 0 18%,rgba(255,255,255,.05) 18% 19%,transparent 19% 81%,rgba(255,255,255,.05) 81% 82%,transparent 82%),
+      radial-gradient(ellipse at 50% 20%,#4a4540,#1d1c1a 70%);color:#f3efe8}
+  .ba .ph.before{background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 60px),
+      linear-gradient(160deg,#8f8676,#5f584d);color:#2b2722}
+  .ba-tag{position:absolute;top:18px;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;padding:7px 12px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);z-index:3;pointer-events:none}
+  .ba-tag.l{left:18px}.ba-tag.r{right:18px}
+  .ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:1px;background:#fff;z-index:4;pointer-events:none;transform:translateX(-.5px)}
+  .ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;border:1px solid #fff;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:1.1rem;letter-spacing:.2em;padding-left:3px}
+  .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:5;margin:0}
+  .ba figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 22px 18px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-family:var(--serif);font-size:1.35rem;z-index:3;pointer-events:none}
+  .ba figcaption i{font-family:var(--sans);font-style:normal;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .ba-feature{grid-column:1/-1;aspect-ratio:16/8}
+  #transformations{background:var(--ink)}
+  #work{background:var(--black)}
+  @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:56px}.ba-hero{aspect-ratio:4/3.4;outline-offset:8px}.hero-inner{padding-top:130px;padding-bottom:90px}.scroll-cue{display:none}}
+  @media (max-width:760px){.ba-grid{grid-template-columns:1fr}.ba-feature{aspect-ratio:4/3}}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:980px){
+    .services{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .about,.contact{grid-template-columns:1fr;gap:60px}
+    .about-visual{max-width:420px}
+    .tile.wide,.tile.narrow{grid-column:span 6}
+    .tile.third{grid-column:span 6}
+  }
+  @media (max-width:760px){
+    section{padding:90px 0}
+    .links{position:fixed;inset:84px 0 auto 0;background:var(--black);flex-direction:column;gap:0;align-items:stretch;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s}
+    .links a{padding:20px 24px;border-top:1px solid var(--line)}
+    .links .btn{margin:16px 24px 24px;text-align:center;border:1px solid var(--white)}
+    .menu-open .links{max-height:480px}
+    .menu-open header{background:var(--black)}
+    .menu-btn{display:block}
+    .services,.steps{grid-template-columns:1fr}
+    .svc{padding:38px 28px}
+    .tile.wide,.tile.narrow,.tile.third{grid-column:1/-1}
+    form{grid-template-columns:1fr}
+    .creds{grid-template-columns:1fr}
+    .brand-sub{display:none}
+    .strip .wrap{justify-content:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<!-- Reusable logo mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="49" fill="#000" stroke="#fff" stroke-width="1.2"/>
+      <circle cx="50" cy="50" r="43" fill="none" stroke="#fff" stroke-width=".5" opacity=".6"/>
+      <path d="M28 52 L50 32 L72 52" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="square"/>
+      <path d="M33 48 V70 H67 V48" fill="none" stroke="#fff" stroke-width="1.6"/>
+      <path d="M46 70 V58 H54 V70" fill="none" stroke="#fff" stroke-width="1.4"/>
+      <path d="M62 38 V31 H66 V42" fill="none" stroke="#fff" stroke-width="1.4"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Brond Homes home">
+      <svg><use href="#mark"/></svg>
+      <div>
+        <span class="brand-name">Brond Homes</span>
+        <span class="brand-sub">LUXURY REMODELS · CUSTOM BUILDS</span>
+      </div>
+    </a>
+    <nav class="links" id="links">
+      <a href="#transformations">Before &amp; After</a>
+      <a href="#work">New Builds</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn">Request a Quote</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-lines" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="rgba(255,255,255,.08)" fill="none">
+      <path d="M700 620 L920 420 L1140 620"/><path d="M740 584 V780 H1100 V584"/>
+      <path d="M-50 700 H1250"/><path d="M880 120 V800"/><path d="M600 0 V800" stroke-dasharray="2 10"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner hero-grid">
+    <div>
+      <div class="eyebrow reveal">Scottsdale · Licensed General Contractor</div>
+      <h1 class="reveal">Crafted homes,<br><em>built to be lived in.</em></h1>
+      <p class="reveal">Luxury remodels and custom builds across Scottsdale and the Phoenix Valley — designed with care, managed start to finish, and finished to a standard you can feel.</p>
+      <div class="hero-ctas reveal">
+        <a href="#contact" class="btn solid">Start Your Project</a>
+        <a href="#transformations" class="btn">See Transformations</a>
+      </div>
+    </div>
+
+    <!-- FEATURED BEFORE / AFTER (swap the .ph divs for <img src="images/..."> ) -->
+    <figure class="ba ba-hero reveal">
+      <div class="ba-after"><div class="ph after"><em>After</em></div></div>
+      <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
+      <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+      <div class="ba-handle"><span>&#8249; &#8250;</span></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+      <figcaption>Whole-Home Remodel <i>· North Scottsdale</i></figcaption>
+    </figure>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div>Licensed</div><div>Bonded</div><div>Insured</div><div>Family Owned</div><div>Scottsdale Based</div>
+  </div>
+</div>
+
+<!-- TRANSFORMATIONS: before & after -->
+<section id="transformations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>The <em>transformation</em></h2>
+      <p>Drag the slider on any project to see where it started — and what we turned it into.</p>
+    </div>
+    <!--
+      HOW TO ADD BEFORE/AFTER PHOTOS:
+      Inside each .ba block, replace
+        <div class="ph after">...</div>   with  <img src="images/kitchen-after.jpg" alt="Kitchen after remodel">
+        <div class="ph before">...</div>  with  <img src="images/kitchen-before.jpg" alt="Kitchen before remodel">
+      Tip: take the before and after from the same spot and angle — it looks amazing on the slider.
+    -->
+    <div class="ba-grid">
+      <figure class="ba ba-feature reveal">
+        <div class="ba-after"><div class="ph after"><em>After</em></div></div>
+        <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
+        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+        <div class="ba-handle"><span>&#8249; &#8250;</span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare">
+        <figcaption>Chef's Kitchen <i>· Scottsdale</i></figcaption>
+      </figure>
+      <figure class="ba reveal">
+        <div class="ba-after"><div class="ph after"><em>After</em></div></div>
+        <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
+        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+        <div class="ba-handle"><span>&#8249; &#8250;</span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare">
+        <figcaption>Primary Bath <i>· Paradise Valley</i></figcaption>
+      </figure>
+      <figure class="ba reveal">
+        <div class="ba-after"><div class="ph after"><em>After</em></div></div>
+        <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
+        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+        <div class="ba-handle"><span>&#8249; &#8250;</span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare">
+        <figcaption>Great Room <i>· Phoenix</i></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What we <em>build</em></h2>
+      <p>One team, one point of contact. We manage every trade on your project so the details never fall through the cracks.</p>
+    </div>
+    <div class="services">
+      <div class="svc reveal"><div class="num">01</div><h3>Custom Homes</h3><p>Ground-up builds from lot to keys, shaped around how you actually live.</p></div>
+      <div class="svc reveal"><div class="num">02</div><h3>Whole-Home Remodels</h3><p>Full interior transformations — new layouts, finishes, and flow without starting over.</p></div>
+      <div class="svc reveal"><div class="num">03</div><h3>Kitchens</h3><p>Chef-ready kitchens with custom cabinetry, stone, and lighting built around the way you cook and gather.</p></div>
+      <div class="svc reveal"><div class="num">04</div><h3>Primary Baths</h3><p>Spa-level bathrooms: curbless showers, freestanding tubs, and tile work done right.</p></div>
+      <div class="svc reveal"><div class="num">05</div><h3>Additions</h3><p>Casitas, guest suites, and new square footage that looks like it was always there.</p></div>
+      <div class="svc reveal"><div class="num">06</div><h3>Outdoor Living</h3><p>Patios, outdoor kitchens, and pool-side spaces made for Arizona evenings.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>New builds &amp; <em>signature work</em></h2>
+      <div class="filters" id="filters">
+        <button class="active" data-f="all">All</button>
+        <button data-f="custom">New Builds</button>
+        <button data-f="kitchen">Kitchens</button>
+        <button data-f="bath">Baths</button>
+        <button data-f="remodel">Remodels</button>
+      </div>
+    </div>
+
+    <!--
+      HOW TO ADD YOUR PHOTOS:
+      1. Put your photos in a folder called "images" next to this file.
+      2. In a tile below, replace the <div class="ph">...</div> placeholder with:
+           <img src="images/your-photo.jpg" alt="Short description">
+      3. Change the title and location in the caption.
+      data-cat must be one of: kitchen, bath, remodel, custom
+    -->
+    <div class="gallery" id="gallery">
+      <div class="tile wide reveal" data-cat="kitchen">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Kitchen · Scottsdale</span><h4>Desert Modern Kitchen</h4></div>
+      </div>
+      <div class="tile narrow reveal" data-cat="bath">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Bath · Paradise Valley</span><h4>Primary Suite Spa</h4></div>
+      </div>
+      <div class="tile third reveal" data-cat="remodel">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Remodel · North Scottsdale</span><h4>Great Room Refresh</h4></div>
+      </div>
+      <div class="tile third reveal" data-cat="custom">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Custom · Cave Creek</span><h4>Hillside Residence</h4></div>
+      </div>
+      <div class="tile third reveal" data-cat="bath">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Bath · Scottsdale</span><h4>Guest Bath</h4></div>
+      </div>
+      <div class="tile narrow reveal" data-cat="remodel">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Remodel · Phoenix</span><h4>Whole-Home Transformation</h4></div>
+      </div>
+      <div class="tile wide reveal" data-cat="custom">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Custom · Scottsdale</span><h4>Modern Desert Estate</h4></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox"><button aria-label="Close">&times;</button><img alt=""></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="about-visual reveal"><svg viewBox="0 0 100 100"><use href="#mark"/></svg></div>
+    <div class="reveal">
+      <div class="eyebrow">About Brond Homes</div>
+      <h2>A family name,<br><em>on every build.</em></h2>
+      <p>Brond Homes is a Scottsdale-based, family-run general contracting company led by Bond Herrera. We started in luxury remodeling and grew into full custom builds by doing one thing consistently: treating every home like it carries our name — because it does.</p>
+      <p>As a licensed general contractor, we manage a trusted network of trade partners under one roof. You get one point of contact, clear budgets, honest schedules, and craftsmanship that holds up long after the final walkthrough.</p>
+      <div class="creds">
+        <div><small>Arizona ROC License</small><strong>ROC #000000</strong></div>
+        <div><small>Coverage</small><strong>Licensed · Bonded · Insured</strong></div>
+        <div><small>Based In</small><strong>Scottsdale, AZ</strong></div>
+        <div><small>Service Area</small><strong>Phoenix Valley</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How we <em>work</em></h2>
+      <p>A clear process means no surprises. Here's what to expect from first call to final walkthrough.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span>i.</span><h3>Consultation</h3><p>We meet at your home, listen to your goals, and walk the space together.</p></div>
+      <div class="step reveal"><span>ii.</span><h3>Design & Budget</h3><p>You get a detailed proposal with a transparent, line-by-line budget.</p></div>
+      <div class="step reveal"><span>iii.</span><h3>Build</h3><p>We schedule and manage every trade, with regular updates along the way.</p></div>
+      <div class="step reveal"><span>iv.</span><h3>Walkthrough</h3><p>A final punch list walk ensures every detail is right before we hand over the keys.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact">
+    <div class="contact-info reveal">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Let's build<br><em>something lasting.</em></h2>
+      <p>Tell us a little about your project and we'll reach out within one business day to schedule a consultation.</p>
+      <div class="info-row"><small>Phone</small><a href="tel:+14800000000">(480) 000-0000</a></div>
+      <div class="info-row"><small>Email</small><a href="mailto:info@brondhomes.com">info@brondhomes.com</a></div>
+      <div class="info-row"><small>Office</small><span>Scottsdale, Arizona</span></div>
+    </div>
+
+    <form id="quoteForm" class="reveal">
+      <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+      <div class="field full"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="type">Project Type</label>
+        <select id="type" name="type">
+          <option>Custom Home</option><option>Whole-Home Remodel</option><option>Kitchen</option>
+          <option>Bathroom</option><option>Addition / Casita</option><option>Outdoor Living</option><option>Other</option>
+        </select></div>
+      <div class="field"><label for="budget">Estimated Budget</label>
+        <select id="budget" name="budget">
+          <option>Under $50k</option><option>$50k – $150k</option><option>$150k – $500k</option><option>$500k+</option><option>Not sure yet</option>
+        </select></div>
+      <div class="field full"><label for="msg">Tell us about your project</label><textarea id="msg" name="message"></textarea></div>
+      <div class="field full"><button class="btn solid" type="submit">Send Request</button></div>
+      <p class="form-msg" id="formMsg">Thank you — we'll be in touch shortly.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="brand"><svg><use href="#mark"/></svg><div><span class="brand-name">Brond Homes</span><span class="brand-sub">LUXURY REMODELS · CUSTOM BUILDS</span></div></a>
+      <div class="foot-links">
+        <a href="#transformations">Before &amp; After</a><a href="#work">New Builds</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Brond Homes. All rights reserved.</span>
+      <span>Arizona ROC #000000 · Licensed · Bonded · Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Where quote requests are sent (change to your real email)
+  const QUOTE_EMAIL = "info@brondhomes.com";
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Header background on scroll
+  const header = document.querySelector('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  // Mobile menu
+  document.getElementById('menuBtn').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+  document.querySelectorAll('#links a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
+
+  // Fade-in on scroll
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+
+  // Before/after sliders
+  document.querySelectorAll('.ba').forEach(ba => {
+    const r = ba.querySelector('input');
+    const set = () => ba.style.setProperty('--pos', r.value + '%');
+    r.addEventListener('input', set); set();
+  });
+
+  // Gallery filters
+  document.querySelectorAll('#filters button').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.f;
+    document.querySelectorAll('#gallery .tile').forEach(t => t.classList.toggle('hide', f !== 'all' && t.dataset.cat !== f));
+  }));
+
+  // Lightbox (only for tiles that have a real photo)
+  const lb = document.getElementById('lightbox');
+  document.querySelectorAll('#gallery .tile').forEach(t => t.addEventListener('click', () => {
+    const img = t.querySelector('img'); if (!img) return;
+    lb.querySelector('img').src = img.src; lb.classList.add('open');
+  }));
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+
+  // Quote form: opens the visitor's email app with everything filled in
+  document.getElementById('quoteForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const body =
+      `Name: ${f.name.value}\nPhone: ${f.phone.value}\nEmail: ${f.email.value}\n` +
+      `Project Type: ${f.type.value}\nBudget: ${f.budget.value}\n\n${f.message.value}`;
+    window.location.href = `mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent('Quote Request – ' + f.name.value)}&body=${encodeURIComponent(body)}`;
+    document.getElementById('formMsg').style.display = 'block';
+  });
+</script>
+</body>
+</html>
