@@ -73,9 +73,9 @@
   /* ---------- HERO ---------- */
   .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
     background:
-      linear-gradient(90deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.62) 45%,rgba(8,8,8,.3) 100%),
-      linear-gradient(180deg,rgba(8,8,8,.35) 0%,rgba(8,8,8,0) 30%,rgba(8,8,8,.9) 100%),
-      url('images/hero.jpg') center/cover no-repeat #0b0b0b;}
+      linear-gradient(90deg,rgba(8,8,8,.86) 0%,rgba(8,8,8,.55) 42%,rgba(8,8,8,.18) 100%),
+      linear-gradient(180deg,rgba(8,8,8,.45) 0%,rgba(8,8,8,0) 22%,rgba(8,8,8,0) 70%,rgba(8,8,8,.85) 100%),
+      url('images/hero-front.jpg') center 40%/cover no-repeat #0b0b0b;}
   /* Background photo: images/hero.jpg (filler from Unsplash). Replace that file with your own project photo anytime. */
   .hero-lines{display:none}
   .hero-inner{position:relative;padding-top:84px}
@@ -236,7 +236,7 @@
     .tile.third{grid-column:span 6}
   }
   @media (max-width:760px){
-    .hero{background-position:65% center}
+    .hero{background-position:60% center}
     section{padding:90px 0}
     .links{position:fixed;inset:100px 0 auto 0;background:var(--black);flex-direction:column;gap:0;align-items:stretch;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s}
     .links a{padding:20px 24px;border-top:1px solid var(--line)}
