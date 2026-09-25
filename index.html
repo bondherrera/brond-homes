@@ -218,12 +218,13 @@
   @media (max-width:760px){.ba figcaption i{display:block;margin-top:4px}.ba-grid{grid-template-columns:1fr}.ba-feature{aspect-ratio:4/3}}
 
   .reel{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:80px;align-items:center;margin-top:90px}
+  .reel-flip{grid-template-columns:1fr minmax(0,380px)}.reel-flip .reel-video{order:2}
   .reel-video{position:relative;aspect-ratio:9/16;overflow:hidden;background:#111;outline:1px solid var(--line);outline-offset:12px}
   .reel-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .reel-text h3{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1;margin-bottom:22px}
   .reel-text h3 em{font-style:italic;color:var(--soft)}
   .reel-text p{color:var(--soft);max-width:460px;margin-bottom:34px}
-  @media (max-width:760px){.reel{grid-template-columns:1fr;gap:44px;margin-top:60px}.reel-video{max-width:340px;margin:0 auto;width:100%}}
+  @media (max-width:760px){.reel,.reel-flip{grid-template-columns:1fr;gap:44px;margin-top:60px}.reel-flip .reel-video{order:0}.reel-video{max-width:340px;margin:0 auto;width:100%}}
 
   /* ---------- MOBILE ---------- */
   @media (max-width:980px){
@@ -362,6 +363,17 @@
         <div class="eyebrow">Watch the transformation</div>
         <h3>From dated tile<br><em>to white marble.</em></h3>
         <p>Dated tile floors and builder-grade cabinets, replaced with wide-plank wood floors, a waterfall marble island, a full-height stone backsplash, and custom cabinetry.</p>
+        <a href="#contact" class="btn">Start Your Project</a>
+      </div>
+    </div>
+    <div class="reel reel-flip reveal">
+      <div class="reel-video">
+        <video src="videos/bath-before-after.mp4" poster="images/bath-before-after-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Before and after video of a bathroom remodel, from demolition to a finished marble shower and double vanity"></video>
+      </div>
+      <div class="reel-text">
+        <div class="eyebrow">Bathroom before &amp; after</div>
+        <h3>From demo day<br><em>to finished marble.</em></h3>
+        <p>The old tub and tile came out. In went a frameless glass walk-in shower with herringbone marble, a rain head, a built-in niche, a double vanity, and marble hex floors.</p>
         <a href="#contact" class="btn">Start Your Project</a>
       </div>
     </div>
