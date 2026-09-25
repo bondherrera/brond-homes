@@ -207,6 +207,7 @@
   .ba figcaption i{font-family:var(--sans);font-style:normal;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
   .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   .ba-feature{grid-column:1/-1;aspect-ratio:16/8}
+  .ba-tall{aspect-ratio:4/5}
   #transformations{background:var(--ink)}
   #work{background:var(--black)}
   @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:56px}.ba-hero{aspect-ratio:4/3.4;outline-offset:8px}.hero-inner{padding-top:130px;padding-bottom:90px}.scroll-cue{display:none}}
@@ -324,29 +325,21 @@
       Tip: take the before and after from the same spot and angle — it looks amazing on the slider.
     -->
     <div class="ba-grid">
-      <figure class="ba ba-feature reveal">
-        <div class="ba-after"><div class="ph after"><em>After</em></div></div>
-        <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
+      <figure class="ba ba-tall reveal">
+        <div class="ba-after"><img src="images/bath-shower.jpg" alt="After: the tub nook rebuilt as a frameless glass walk-in shower" style="object-position:center 55%"></div>
+        <div class="ba-before"><img src="images/bath-tub.jpg" alt="Before: freestanding tub nook" style="object-position:center 45%"></div>
         <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
         <div class="ba-handle"><span>&#8249; &#8250;</span></div>
         <input type="range" min="0" max="100" value="50" aria-label="Drag to compare">
-        <figcaption>Chef's Kitchen <i>· Scottsdale</i></figcaption>
+        <figcaption>Primary Bath <i>· Tub Nook to Walk-In Shower</i></figcaption>
       </figure>
-      <figure class="ba reveal">
-        <div class="ba-after"><div class="ph after"><em>After</em></div></div>
-        <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
+      <figure class="ba ba-tall reveal">
+        <div class="ba-after"><img src="images/kitchen-after.jpg" alt="After: kitchen with waterfall marble island"></div>
+        <div class="ba-before"><img src="images/kitchen-before.jpg" alt="Before: kitchen during demolition"></div>
         <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
         <div class="ba-handle"><span>&#8249; &#8250;</span></div>
         <input type="range" min="0" max="100" value="50" aria-label="Drag to compare">
-        <figcaption>Primary Bath <i>· Paradise Valley</i></figcaption>
-      </figure>
-      <figure class="ba reveal">
-        <div class="ba-after"><div class="ph after"><em>After</em></div></div>
-        <div class="ba-before"><div class="ph before"><em>Before</em></div></div>
-        <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
-        <div class="ba-handle"><span>&#8249; &#8250;</span></div>
-        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare">
-        <figcaption>Great Room <i>· Phoenix</i></figcaption>
+        <figcaption>Kitchen Remodel <i>· Waterfall Island</i></figcaption>
       </figure>
     </div>
   </div>
@@ -394,12 +387,12 @@
     -->
     <div class="gallery" id="gallery">
       <div class="tile half reveal" data-cat="bath">
-        <img src="images/bath-tub.jpg" alt="Freestanding soaking tub under a crystal chandelier with a stone feature wall" loading="lazy" style="object-position:center 40%">
-        <div class="cap"><span>Primary Bath</span><h4>Soaking Tub &amp; Stone Feature Wall</h4></div>
-      </div>
-      <div class="tile half reveal" data-cat="bath">
         <img src="images/bath-shower.jpg" alt="Frameless glass walk-in shower with stone tile" loading="lazy" style="object-position:center 55%">
         <div class="cap"><span>Primary Bath</span><h4>Frameless Glass Shower</h4></div>
+      </div>
+      <div class="tile half reveal" data-cat="kitchen">
+        <img src="images/kitchen-after.jpg" alt="Waterfall marble island with brass counter stools" loading="lazy" style="object-position:center 60%">
+        <div class="cap"><span>Kitchen</span><h4>Waterfall Island Kitchen</h4></div>
       </div>
       <div class="tile third reveal" data-cat="remodel">
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
@@ -409,9 +402,9 @@
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
         <div class="cap"><span>Custom · Cave Creek</span><h4>Hillside Residence</h4></div>
       </div>
-      <div class="tile third reveal" data-cat="kitchen">
-        <img src="images/kitchen-after.jpg" alt="Waterfall marble island with brass counter stools" loading="lazy" style="object-position:center 60%">
-        <div class="cap"><span>Kitchen</span><h4>Waterfall Island Kitchen</h4></div>
+      <div class="tile third reveal" data-cat="bath">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
+        <div class="cap"><span>Bath</span><h4>Guest Bath</h4></div>
       </div>
       <div class="tile narrow reveal" data-cat="remodel">
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
