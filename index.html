@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brond Homes | Luxury Remodels & Custom Builds in Scottsdale, AZ</title>
 <meta name="description" content="Brond Homes is a licensed Scottsdale general contractor specializing in luxury remodels and custom home builds across the Phoenix Valley.">
+<link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -42,9 +43,12 @@
   /* ---------- NAV ---------- */
   header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
   header.scrolled{background:rgba(11,11,11,.92);backdrop-filter:blur(10px);border-color:var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:92px}
   .brand{display:flex;align-items:center;gap:14px}
   .brand svg{width:46px;height:46px;flex:none}
+  .logo{height:62px;width:auto;transition:height .3s}
+  header.scrolled .logo{height:52px}
+  .logo-foot{height:96px}
   .brand-name{font-family:var(--sc);font-size:1.45rem;letter-spacing:.18em;line-height:1}
   .brand-sub{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.34em;color:var(--muted);margin-top:5px}
   .links{display:flex;gap:38px;align-items:center}
@@ -65,7 +69,7 @@
   /* ---------- HERO ---------- */
   .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
     background:
-      linear-gradient(90deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.72) 45%,rgba(8,8,8,.45) 100%),
+      linear-gradient(90deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.62) 45%,rgba(8,8,8,.3) 100%),
       linear-gradient(180deg,rgba(8,8,8,.35) 0%,rgba(8,8,8,0) 30%,rgba(8,8,8,.9) 100%),
       url('images/hero.jpg') center/cover no-repeat #0b0b0b;}
   /* Background photo: images/hero.jpg (filler from Unsplash). Replace that file with your own project photo anytime. */
@@ -220,7 +224,7 @@
   @media (max-width:760px){
     .hero{background-position:65% center}
     section{padding:90px 0}
-    .links{position:fixed;inset:84px 0 auto 0;background:var(--black);flex-direction:column;gap:0;align-items:stretch;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s}
+    .links{position:fixed;inset:92px 0 auto 0;background:var(--black);flex-direction:column;gap:0;align-items:stretch;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s}
     .links a{padding:20px 24px;border-top:1px solid var(--line)}
     .links .btn{margin:16px 24px 24px;text-align:center;border:1px solid var(--white)}
     .menu-open .links{max-height:480px}
@@ -254,13 +258,7 @@
 
 <header id="top">
   <div class="wrap nav">
-    <a href="#top" class="brand" aria-label="Brond Homes home">
-      <svg><use href="#mark"/></svg>
-      <div>
-        <span class="brand-name">Brond Homes</span>
-        <span class="brand-sub">LUXURY REMODELS · CUSTOM BUILDS</span>
-      </div>
-    </a>
+    <a href="#top" class="brand" aria-label="Home"><img src="images/logo.png" alt="Brond Builds — Luxury Builds and Remodels" class="logo"></a>
     <nav class="links" id="links">
       <a href="#transformations">Before &amp; After</a>
       <a href="#work">New Builds</a>
@@ -432,7 +430,7 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap about">
-    <div class="about-visual reveal"><svg viewBox="0 0 100 100"><use href="#mark"/></svg></div>
+    <div class="about-visual reveal"><img src="images/logo-full.png" alt="Brond Builds logo" style="width:72%;height:auto"></div>
     <div class="reveal">
       <div class="eyebrow">About Brond Homes</div>
       <h2>A family name,<br><em>on every build.</em></h2>
@@ -499,7 +497,7 @@
 <footer>
   <div class="wrap">
     <div class="foot">
-      <a href="#top" class="brand"><svg><use href="#mark"/></svg><div><span class="brand-name">Brond Homes</span><span class="brand-sub">LUXURY REMODELS · CUSTOM BUILDS</span></div></a>
+      <a href="#top" class="brand"><img src="images/logo-full.png" alt="Brond Builds" class="logo logo-foot"></a>
       <div class="foot-links">
         <a href="#transformations">Before &amp; After</a><a href="#work">New Builds</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
       </div>
