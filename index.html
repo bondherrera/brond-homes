@@ -226,6 +226,16 @@
   .reel-text p{color:var(--soft);max-width:460px;margin-bottom:34px}
   @media (max-width:760px){.reel,.reel-flip{grid-template-columns:1fr;gap:44px;margin-top:60px}.reel-flip .reel-video{order:0}.reel-video{max-width:340px;margin:0 auto;width:100%}}
 
+  .hero-media{position:relative;aspect-ratio:1/1.02;width:100%}
+  .hm{position:absolute;overflow:hidden;background:#111;margin:0}
+  .hm video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hm-tall{top:0;right:0;width:56%;aspect-ratio:9/16;box-shadow:0 40px 90px rgba(0,0,0,.55);outline:1px solid var(--line);outline-offset:10px}
+  .hm-wide{left:0;bottom:4%;width:66%;aspect-ratio:16/10;box-shadow:0 30px 70px rgba(0,0,0,.6);border:6px solid #0b0b0b;z-index:2}
+  .hm figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));font-family:var(--serif);font-size:1.15rem;pointer-events:none}
+  .hm-tall figcaption{top:0;bottom:auto;padding:16px 18px 34px;background:linear-gradient(rgba(0,0,0,.7),transparent)}
+  .hm figcaption i{font-family:var(--sans);font-style:normal;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+  @media (max-width:980px){.hero-media{max-width:560px;margin:0 auto}}
+
   /* ---------- MOBILE ---------- */
   @media (max-width:980px){
     .services{grid-template-columns:1fr 1fr}
@@ -303,15 +313,17 @@
       </div>
     </div>
 
-    <!-- FEATURED BEFORE / AFTER (swap the .ph divs for <img src="images/..."> ) -->
-    <figure class="ba ba-hero reveal">
-      <div class="ba-after"><img src="images/kitchen-after-2.jpg" alt="After: open kitchen with marble island, pendant lights and brass counter stools" style="object-position:38% center"></div>
-      <div class="ba-before"><img src="images/kitchen-before.jpg" alt="The same space during demolition"></div>
-      <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
-      <div class="ba-handle"><span>&#8249; &#8250;</span></div>
-      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-      <figcaption>Kitchen Remodel <i>· Waterfall Island</i></figcaption>
-    </figure>
+    <!-- FEATURED VIDEOS -->
+    <div class="hero-media reveal">
+      <figure class="hm hm-tall">
+        <video src="videos/kitchen-walkthrough.mp4" poster="images/kitchen-walkthrough-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Walkthrough of a finished living room and white marble kitchen"></video>
+        <figcaption>Kitchen &amp; Living <i>· Remodel</i></figcaption>
+      </figure>
+      <figure class="hm hm-wide">
+        <video src="videos/backyard-pool.mp4" poster="images/backyard-pool-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Drone flyover of a backyard pool remodel"></video>
+        <figcaption>Pool &amp; Backyard <i>· Remodel</i></figcaption>
+      </figure>
+    </div>
   </div>
   <div class="scroll-cue">Scroll</div>
 </section>
