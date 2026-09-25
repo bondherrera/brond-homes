@@ -111,7 +111,7 @@
   .filters button.active,.filters button:hover{color:var(--white);border-color:var(--white)}
   .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
   .tile{position:relative;overflow:hidden;background:#222;cursor:pointer;aspect-ratio:4/3}
-  .tile.wide{grid-column:span 7}.tile.narrow{grid-column:span 5}.tile.third{grid-column:span 4}
+  .tile.half{grid-column:span 6;aspect-ratio:4/5}.tile.wide{grid-column:span 7}.tile.narrow{grid-column:span 5}.tile.third{grid-column:span 4}
   .tile .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#6c6c6c;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
     background:linear-gradient(135deg,#262626,#1b1b1b)}
   .tile .ph svg{width:34px;height:34px;opacity:.6}
@@ -232,7 +232,7 @@
     .menu-btn{display:block}
     .services,.steps{grid-template-columns:1fr}
     .svc{padding:38px 28px}
-    .tile.wide,.tile.narrow,.tile.third{grid-column:1/-1}
+    .tile.wide,.tile.narrow,.tile.third,.tile.half{grid-column:1/-1}
     form{grid-template-columns:1fr}
     .creds{grid-template-columns:1fr}
     .brand-sub{display:none}
@@ -393,13 +393,13 @@
       data-cat must be one of: kitchen, bath, remodel, custom
     -->
     <div class="gallery" id="gallery">
-      <div class="tile wide reveal" data-cat="kitchen">
-        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
-        <div class="cap"><span>Kitchen · Scottsdale</span><h4>Desert Modern Kitchen</h4></div>
+      <div class="tile half reveal" data-cat="bath">
+        <img src="images/bath-tub.jpg" alt="Freestanding soaking tub under a crystal chandelier with a stone feature wall" loading="lazy" style="object-position:center 40%">
+        <div class="cap"><span>Primary Bath</span><h4>Soaking Tub &amp; Stone Feature Wall</h4></div>
       </div>
-      <div class="tile narrow reveal" data-cat="bath">
-        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
-        <div class="cap"><span>Bath · Paradise Valley</span><h4>Primary Suite Spa</h4></div>
+      <div class="tile half reveal" data-cat="bath">
+        <img src="images/bath-shower.jpg" alt="Frameless glass walk-in shower with stone tile" loading="lazy" style="object-position:center 55%">
+        <div class="cap"><span>Primary Bath</span><h4>Frameless Glass Shower</h4></div>
       </div>
       <div class="tile third reveal" data-cat="remodel">
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
@@ -409,9 +409,9 @@
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
         <div class="cap"><span>Custom · Cave Creek</span><h4>Hillside Residence</h4></div>
       </div>
-      <div class="tile third reveal" data-cat="bath">
+      <div class="tile third reveal" data-cat="kitchen">
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
-        <div class="cap"><span>Bath · Scottsdale</span><h4>Guest Bath</h4></div>
+        <div class="cap"><span>Kitchen · Scottsdale</span><h4>Desert Modern Kitchen</h4></div>
       </div>
       <div class="tile narrow reveal" data-cat="remodel">
         <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Your photo here</div>
